@@ -1,21 +1,15 @@
 package com.thoughtworks.twu.Printer;
 
+import java.util.Scanner;
+
 public class MainPrinter {
     public static void main(String[] args) {
 
-        Printer printer = new Printer(3);
+        //Objetos iniciais
+        Printer printer = new Printer();
 
-        printer.printAsterisks();
-        printer.printInLine();
-        printer.printInVerticalLine();
-        printer.printTriangle();
-        printer.printIsoscelesTriangle();
-        printer.printDiamond();
-        printer.printDiamond("Adriana");
-        printer.printInVerticalLine();
-        printer.printFizzBuzz();
-
-        printer.printGen(98);
+        //Menu
+        printer.hello();
 
 
     }

@@ -22,7 +22,7 @@
 
         public void drawDiamond () {
 
-                           triangle.printIsoscelesTriangle();
+            triangle.printIsoscelesTriangle();
             triangle.backWardsIsoscelesTriangle();
             }
 
@@ -40,6 +40,7 @@
         }
 
         public void setN(int n) {
-            this.n = n;
+            triangle.setN(n);
+
         }
     }

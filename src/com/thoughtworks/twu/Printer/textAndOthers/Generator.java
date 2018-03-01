@@ -7,6 +7,7 @@ public class Generator {
 
 
     public void findFactors (int n) {
+
         Set<Integer> factors = new TreeSet<>();
         int tempN = n;
 
