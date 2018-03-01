@@ -1,7 +1,5 @@
 package com.thoughtworks.twu.Printer;
 
-import com.thoughtworks.twu.Printer.geometrics.Triangle;
-
 public class MainPrinter {
     public static void main(String[] args) {
 
@@ -14,6 +12,10 @@ public class MainPrinter {
         printer.printIsoscelesTriangle();
         printer.printDiamond();
         printer.printDiamond("Adriana");
+        printer.printInVerticalLine();
+        printer.printFizzBuzz();
+
+        printer.printGen(98);
 
 
     }
