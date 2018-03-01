@@ -117,7 +117,6 @@
             public void printDiamondWithAName(String name) {
 
                 System.out.println("- Drawing a diamond  with " + (n  * 2 - 1) + " lines - ");
-
                 isoscelesTriangle(true);
                 System.out.println(name);
                 backWardsIsoscelesTriangle(-1);
