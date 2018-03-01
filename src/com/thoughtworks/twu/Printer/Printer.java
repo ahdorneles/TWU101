@@ -1,129 +1,79 @@
         package com.thoughtworks.twu.Printer;
 
 
+        import com.thoughtworks.twu.Printer.geometrics.Basics;
+        import com.thoughtworks.twu.Printer.geometrics.Diamond;
+        import com.thoughtworks.twu.Printer.geometrics.Triangle;
+
         public class Printer {
 
             private int n;
+            private Basics basics = Basics.getBasics();
+            private Triangle triangle = Triangle.getTriangle();
+            private Diamond diamond = Diamond.getDiamond();
 
             Printer(int n) {
                 this.n = n;
             }
 
 
-            public void printAsterisks() {
+            public void printAsterisks () {
+                basics.setN(n);
                 System.out.println("- Printing one asterisks in one line - ");
-                System.out.println("*");
-                System.out.println("-----------------------------------");
-            }
-
-            public void printVerticalLine() {
-
-                System.out.println("- Printing " + n + " asterisks in " + n + " lines - ");
-
-                for (int i = 0; i < n; i++) {
-                    System.out.println("*");
-                }
+                basics.asterisks();
                 System.out.println("-----------------------------------");
 
             }
 
-            public void printInLine() {
-
+            public void printInLine () {
+                basics.setN(n);
                 System.out.println("- Printing " + n + " asterisks in one line - ");
-
-                for (int i = 0; i < n; i++) {
-                    System.out.print("*");
-                }
-                System.out.println("\n--------------------------------------");
-            }
-
-            public void printInTriangle() {
-
-                System.out.println("- Drawing a triangle with " + n + " lines - ");
-
-                for (int i = 0; i < n; i++) {
-
-                    for (int j = 0; j <= i; j++) {
-                        System.out.print("*");
-
-                    }
-                    System.out.println();
-                }
+                basics.inLine();
                 System.out.println("--------------------------------------");
+
             }
 
-            private void backWardsIsoscelesTriangle(int num) {
-                int size = n *  2;
+            public void printInVerticalLine() {
+                basics.setN(n);
+                System.out.println("- Printing " + n + " asterisks in " + n + " lines - ");
+                basics.verticalLine();
+                System.out.println("--------------------------------------");
 
-                if (num == -1) {
-
-                    for (int i = n - 2; i >= 0; i--) {
-                        iteratingTriangleLine(size, i);
-
-                    }
-                }
             }
 
+            public void printTriangle() {
+                System.out.println("- Drawing a triangle with " + n + " lines - ");
+                triangle.setN(n);
+                triangle.printInTriangle();
+                System.out.println("--------------------------------------");
 
-            public void isoscelesTriangle(boolean hasAname) {
 
-
-                int size = n * 2 - 1;
-                int tempN = n;
-
-                if(hasAname) {
-                    tempN = n - 1;
-                }
-                    for (int i = 0; i < tempN; i++) {
-                        iteratingTriangleLine(size, i);
-
-                    }
-
-                }
-
-            private void iteratingTriangleLine(int size, int i) {
-
-                for (int j = 0; j <= size; j++) {
-
-                    if (i + j >= n && j <= n + i) {
-                        System.out.print("*");
-                    } else {
-                        System.out.print(" ");
-                    }
-                }
-                System.out.println();
             }
 
             public void printIsoscelesTriangle () {
-
+                triangle.setN(n);
                 System.out.println("- Drawing a triangle  with " + n + " lines - ");
-                isoscelesTriangle(false);
+                triangle.isoscelesTriangle(false);
                 System.out.println("--------------------------------------");
 
+            }
+
+            public void printDiamond () {
+                diamond.setN(n);
+                System.out.println("- Drawing a diamond  with " + (n * 2 - 1) + " lines - ");
+                diamond.drawDiamond();
+                System.out.println("--------------------------------------");
+            }
+
+            public void printDiamond(String name) {
+                diamond.setN(n);
+                System.out.println("- Drawing a diamond  with " + (n * 2 - 1) + " lines - ");
+                diamond.drawDiamond(name);
+                System.out.println("--------------------------------------");
 
             }
 
 
-            public void printDiamond() {
-
-                System.out.println("- Drawing a diamond  with " + (n  * 2 - 1) + " lines - ");
-                isoscelesTriangle(false);
-                backWardsIsoscelesTriangle(-1);
-                System.out.println("--------------------------------------");
-
-
-            }
-
-            public void printDiamondWithAName(String name) {
-
-                System.out.println("- Drawing a diamond  with " + (n  * 2 - 1) + " lines - ");
-                isoscelesTriangle(true);
-                System.out.println(name);
-                backWardsIsoscelesTriangle(-1);
-                System.out.println("--------------------------------------");
-
-
-            }
         }
 
 
