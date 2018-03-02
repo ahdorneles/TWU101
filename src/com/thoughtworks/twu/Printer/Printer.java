@@ -14,8 +14,8 @@
 
                 private int n = 0;
                 private String userName;
-                private Scanner input = new Scanner(System.in);
-                private Basics basics = Basics.getBasics();
+                private Scanner input;
+                private Basics go
                 private Triangle triangle = Triangle.getTriangle();
                 private Diamond diamond = Diamond.getDiamond();
                 private FizzBuzz fizzBuzz = new FizzBuzz();
@@ -23,6 +23,7 @@
 
 
                 public void hello() {
+                    input = new Scanner(System.in);
                     System.out.println(greeting());
                     userName = input.nextLine();
                     menu();
