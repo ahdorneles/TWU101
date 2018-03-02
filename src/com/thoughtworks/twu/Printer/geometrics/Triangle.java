@@ -1,4 +1,5 @@
-package com.thoughtworks.twu.Printer.geometrics;
+package thoughtworks.twu.Printer.geometrics;
+
 
 public class Triangle {
 

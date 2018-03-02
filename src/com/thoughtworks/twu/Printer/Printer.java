@@ -1,11 +1,11 @@
-            package com.thoughtworks.twu.Printer;
-
+            package thoughtworks.twu.Printer;
 
             import com.thoughtworks.twu.Printer.geometrics.Basics;
-            import com.thoughtworks.twu.Printer.geometrics.Diamond;
-            import com.thoughtworks.twu.Printer.geometrics.Triangle;
+
             import com.thoughtworks.twu.Printer.textAndOthers.FizzBuzz;
-            import com.thoughtworks.twu.Printer.textAndOthers.Generator;
+            import thoughtworks.twu.Printer.geometrics.Diamond;
+            import thoughtworks.twu.Printer.geometrics.Triangle;
+            import thoughtworks.twu.Printer.textAndOthers.Generator;
             import java.util.Calendar;
             import java.util.GregorianCalendar;
             import java.util.Scanner;
@@ -15,11 +15,9 @@
                 private int n = 0;
                 private String userName;
                 private Scanner input;
-                private Basics go
-                private Triangle triangle = Triangle.getTriangle();
-                private Diamond diamond = Diamond.getDiamond();
-                private FizzBuzz fizzBuzz = new FizzBuzz();
-                private Generator generator = new Generator();
+                private Basics basics;
+                private Triangle triangle;
+                private Diamond diamond;
 
 
                 public void hello() {
@@ -30,7 +28,7 @@
                     again();
                 }
 
-                public String greeting() {
+                private String greeting() {
 
                     Calendar calendar = new GregorianCalendar();
                     int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -46,7 +44,7 @@
                     return greeting;
                 }
 
-                public void menu() {
+                private void menu() {
 
                     System.out.println("------------------------------------------\n" +
                             "Olá, " + userName + ", digite o número do exercício que deseja conferir: \n" +
@@ -68,10 +66,11 @@
                 }
 
 
-                public void exerciseMenu(String next) {
+                private void exerciseMenu(String next) {
 
 
                     int exercise = Integer.parseInt(next);
+
                     if(exercise == 1) {
                         printAsterisks();
                     } else if(exercise == 8) {
@@ -127,7 +126,7 @@
 
                 }
 
-                public void setN () {
+                private void setN() {
 
                     String linhas = "Digite o tamanho/número > ";
                     System.out.println(linhas);
@@ -136,7 +135,9 @@
                 }
 
 
-                public void printGen(int n) {
+                private void printGen(int n) {
+
+                    Generator generator = new Generator();
                     System.out.println("- Printing " + n + "'s factors in ascending order - ");
                     generator.findFactors(n);
                     System.out.println("-----------------------------------");
@@ -144,14 +145,18 @@
                 }
 
 
-                public void printFizzBuzz() {
+                private void printFizzBuzz() {
+
+                    FizzBuzz fizzBuzz = new FizzBuzz();
                     System.out.println("- Printing FizzBuzz - ");
                     fizzBuzz.fizzBuzz();
                     System.out.println("-----------------------------------");
 
                 }
 
-                public void printAsterisks() {
+                private void printAsterisks() {
+
+                    basics = Basics.getBasics();
                     basics.setN(n);
                     System.out.println("- Printing one asterisks in one line - ");
                     basics.asterisks();
@@ -159,7 +164,9 @@
 
                 }
 
-                public void printInLine() {
+                private void printInLine() {
+
+                    basics = Basics.getBasics();
                     basics.setN(n);
                     System.out.println("- Printing " + n + " asterisks in one line - ");
                     basics.inLine();
@@ -167,7 +174,9 @@
 
                 }
 
-                public void printInVerticalLine() {
+                private void printInVerticalLine() {
+
+                    basics = Basics.getBasics();
                     basics.setN(n);
                     System.out.println("- Printing " + n + " asterisks in " + n + " lines - ");
                     basics.verticalLine();
@@ -175,16 +184,20 @@
 
                 }
 
-                public void printTriangle() {
-                    System.out.println("- Drawing a triangle with " + n + " lines - ");
+                private void printTriangle() {
+
+                    triangle = Triangle.getTriangle();
                     triangle.setN(n);
+                    System.out.println("- Drawing a triangle with " + n + " lines - ");
                     triangle.printInTriangle();
                     System.out.println("--------------------------------------");
 
 
                 }
 
-                public void printIsoscelesTriangle() {
+                private void printIsoscelesTriangle() {
+
+                    triangle = Triangle.getTriangle();
                     triangle.setN(n);
                     System.out.println("- Drawing a triangle  with " + n + " lines - ");
                     triangle.isoscelesTriangle(false);
@@ -192,14 +205,18 @@
 
                 }
 
-                public void printDiamond() {
+                private void printDiamond() {
+
+                    diamond = Diamond.getDiamond();
                     diamond.setN(n);
                     System.out.println("- Drawing a diamond  with " + (n * 2 - 1) + " lines - ");
                     diamond.drawDiamond();
                     System.out.println("--------------------------------------");
                 }
 
-                public void printDiamond(String name) {
+                private void printDiamond(String name) {
+
+                    diamond = Diamond.getDiamond();
                     diamond.setN(n);
                     System.out.println("- Drawing a diamond  with " + (n * 2 - 1) + " lines - ");
                     diamond.drawDiamond(name);

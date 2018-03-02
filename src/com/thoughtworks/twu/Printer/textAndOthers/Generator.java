@@ -1,4 +1,4 @@
-package com.thoughtworks.twu.Printer.textAndOthers;
+package thoughtworks.twu.Printer.textAndOthers;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -14,7 +14,7 @@ public class Generator {
         for (int i = 2; i <= n; i++) {
             if (tempN % i == 0) {
                 factors.add(i);
-                tempN = tempN / i;
+                tempN /= i;
             }
         }
         for (Integer factor: factors) {

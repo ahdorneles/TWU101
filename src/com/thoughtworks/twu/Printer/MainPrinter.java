@@ -1,6 +1,4 @@
-package com.thoughtworks.twu.Printer;
-
-import java.util.Scanner;
+package thoughtworks.twu.Printer;
 
 public class MainPrinter {
     public static void main(String[] args) {

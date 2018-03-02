@@ -1,11 +1,11 @@
-    package com.thoughtworks.twu.Printer.geometrics;
+package thoughtworks.twu.Printer.geometrics;
 
-    public class Diamond {
+public class Diamond {
 
         private int n;
 
-        private Triangle triangle = Triangle.getTriangle();
-        private static Diamond diamond = Diamond.getDiamond();
+        private Triangle triangle;
+        private static Diamond diamond;
 
         private Diamond() {
 
@@ -40,6 +40,8 @@
         }
 
         public void setN(int n) {
+            this.n = n;
+            triangle = Triangle.getTriangle();
             triangle.setN(n);
 
         }
