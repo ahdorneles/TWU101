@@ -1,4 +1,4 @@
-            package main;
+            package com.thoughtworks.twu.Printer;
 
 
             import com.thoughtworks.twu.Printer.geometrics.Basics;
